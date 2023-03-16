@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/Muzictown-e-commerce-site/static/css/main.e62b53a4.css",
+    "main.js": "/Muzictown-e-commerce-site/static/js/main.1f9fbfbf.js",
+    "static/media/image-speaker-zx9.png": "/Muzictown-e-commerce-site/static/media/image-speaker-zx9.153cd899b91a08b22b1a.png",
+    "static/media/image-category-thumbnail-speakers.png": "/Muzictown-e-commerce-site/static/media/image-category-thumbnail-speakers.62e3de56e95824e16b95.png",
+    "static/media/image-category-thumbnail-earphones.png": "/Muzictown-e-commerce-site/static/media/image-category-thumbnail-earphones.8624b8abb05ed56db9d1.png",
+    "static/media/image-product.jpg": "/Muzictown-e-commerce-site/static/media/image-product.6febdca9d9630e5b7ebc.jpg",
+    "static/media/image-gallery-3.jpg": "/Muzictown-e-commerce-site/static/media/image-gallery-3.402d4e805943fb31ef40.jpg",
+    "static/media/image-header.jpg": "/Muzictown-e-commerce-site/static/media/image-header.13f7f18f9ae7b105ca12.jpg",
+    "static/media/image-category-thumbnail-headphones.png": "/Muzictown-e-commerce-site/static/media/image-category-thumbnail-headphones.fbd401d9c735a217286f.png",
+    "static/media/image-best-gear.jpg": "/Muzictown-e-commerce-site/static/media/image-best-gear.4d4a28e9e7c9ab158dd8.jpg",
+    "static/media/image-gallery-2.jpg": "/Muzictown-e-commerce-site/static/media/image-gallery-2.988992ea3225e6cd0070.jpg",
+    "static/media/image-hero.jpg": "/Muzictown-e-commerce-site/static/media/image-hero.149b597ba23c38e1.55c18e980adf7658ae26.jpg",
+    "static/media/image-speaker-zx7.jpg": "/Muzictown-e-commerce-site/static/media/image-speaker-zx7.3d4940e89ebadd9beb50.jpg",
+    "static/media/image-gallery-1.jpg": "/Muzictown-e-commerce-site/static/media/image-gallery-1.51bc54acb23ef4776d86.jpg",
+    "index.html": "/Muzictown-e-commerce-site/index.html",
+    "static/media/pattern-circles.svg": "/Muzictown-e-commerce-site/static/media/pattern-circles.f4df3610b83b818abbbe.svg",
+    "main.e62b53a4.css.map": "/Muzictown-e-commerce-site/static/css/main.e62b53a4.css.map",
+    "main.1f9fbfbf.js.map": "/Muzictown-e-commerce-site/static/js/main.1f9fbfbf.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e62b53a4.css",
+    "static/js/main.1f9fbfbf.js"
+  ]
+}
