@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Muzictown-e-commerce-site/static/css/main.e62b53a4.css",
-    "main.js": "/Muzictown-e-commerce-site/static/js/main.62193247.js",
+    "main.js": "/Muzictown-e-commerce-site/static/js/main.9c6e8d77.js",
     "static/media/image-speaker-zx9.png": "/Muzictown-e-commerce-site/static/media/image-speaker-zx9.153cd899b91a08b22b1a.png",
     "static/media/image-category-thumbnail-speakers.png": "/Muzictown-e-commerce-site/static/media/image-category-thumbnail-speakers.62e3de56e95824e16b95.png",
     "static/media/image-category-thumbnail-earphones.png": "/Muzictown-e-commerce-site/static/media/image-category-thumbnail-earphones.8624b8abb05ed56db9d1.png",
@@ -17,10 +17,10 @@
     "index.html": "/Muzictown-e-commerce-site/index.html",
     "static/media/pattern-circles.svg": "/Muzictown-e-commerce-site/static/media/pattern-circles.f4df3610b83b818abbbe.svg",
     "main.e62b53a4.css.map": "/Muzictown-e-commerce-site/static/css/main.e62b53a4.css.map",
-    "main.62193247.js.map": "/Muzictown-e-commerce-site/static/js/main.62193247.js.map"
+    "main.9c6e8d77.js.map": "/Muzictown-e-commerce-site/static/js/main.9c6e8d77.js.map"
   },
   "entrypoints": [
     "static/css/main.e62b53a4.css",
-    "static/js/main.62193247.js"
+    "static/js/main.9c6e8d77.js"
   ]
 }
