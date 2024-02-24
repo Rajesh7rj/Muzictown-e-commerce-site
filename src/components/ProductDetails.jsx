@@ -9,16 +9,15 @@ import Categories from "./Categories";
 export default function ProductDetails({ data, handleClick }) {
   const navigate = useNavigate();
   const location = useLocation();
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState(1);
   const selID = location.state;
 
   const productObj = data.find(({ id }) => id === selID);
 
   const {
-    // id,
+
     goBack,
     image,
-    // qty,
     prodName,
     prodInfo,
     price,
@@ -52,7 +51,7 @@ export default function ProductDetails({ data, handleClick }) {
                     <button
                       className="decrememt"
                       onClick={() => {
-                        quantity > 0 && setQuantity(quantity - 1);
+                        quantity > 1 && setQuantity(quantity - 1);
                       }}
                     >
                       -

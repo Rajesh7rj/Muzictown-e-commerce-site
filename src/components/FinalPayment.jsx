@@ -3,7 +3,7 @@ import "../css/finalPayment.css";
 import { TiTick } from "react-icons/ti";
 import { useNavigate } from "react-router-dom";
 
-export default function FinalPayment({ cartItem, grandTotal }) {
+export default function FinalPayment({ cartItem, grandTotal, removeAll }) {
   const navigate = useNavigate();
 
   return (
@@ -18,8 +18,7 @@ export default function FinalPayment({ cartItem, grandTotal }) {
           You will recieve an email conformation shortly
         </p>
 
-        
-          <div className="iDiv">
+        <div className="iDiv">
           {cartItem.map(({ prodName, price, image, quantity }, index) => (
             <div className="itemDtl" key={index}>
               <img src={image} alt="" />
@@ -28,15 +27,18 @@ export default function FinalPayment({ cartItem, grandTotal }) {
                 <p className="iPrice">${price}</p>
               </div>
               <p className="qnty">x{quantity}</p>
-            </div>))}
-
-            <div className="gTotal">
-              <p>GRAND TOTAL</p>
-              <p className="gT">$ {grandTotal}</p>
             </div>
+          ))}
+
+          <div className="gTotal">
+            <p>GRAND TOTAL</p>
+            <p className="gT">$ {grandTotal}</p>
           </div>
-        
-        <button className="bTh" onClick={() => navigate("/")}>
+        </div>
+
+        <button className="bTh" onClick={() => {
+          navigate("/")
+          removeAll()}}>
           BACK TO HOME
         </button>
       </div>

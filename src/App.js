@@ -12,15 +12,14 @@ import CheckOut from "./pages/CheckOut.jsx";
 import { data } from "./data/productData.jsx";
 
 function App() {
-  
   const [cartItem, setCartItem] = useState([]);
   const [cart, setCart] = useState(false);
   const [total, setTotal] = useState(0);
 
   const handleClick = (data) => {
     console.log(
-      cartItem.findIndex((value) => value.id === data.id),
-      data
+      "11",
+      cartItem.findIndex((value) => value.id === data.id)
     );
     let itemIndex = cartItem.findIndex((value) => value.id === data.id);
     if (itemIndex >= 0) {
@@ -29,7 +28,7 @@ function App() {
       cartItem.push(data);
       setCartItem(cartItem);
 
-      setTotal(total + data.price * data.quantity);
+      setTotal(data.price * data.quantity);
     }
   };
 
@@ -39,21 +38,21 @@ function App() {
   };
 
   const handleQuantity = (increment, data) => {
-
     let itemIndex = cartItem.findIndex((value) => value.id === data.id);
     let item = cartItem[itemIndex];
 
     if (increment) {
       item.quantity = item.quantity + 1;
+      console.log("inc", item.quantity);
       setTotal(total + item.price);
     } else {
-      item.quantity = item.quantity - 1;
+      item.quantity =  item.quantity - 1;
+      console.log("dec", item.quantity);
       setTotal(total - item.price);
     }
 
     cartItem.splice(itemIndex, 1, item);
     setCartItem([...cartItem]);
-    console.log("carte Item", cartItem);
   };
 
   return (
@@ -78,7 +77,9 @@ function App() {
         />
         <Route
           path="product_details/checkout"
-          element={<CheckOut cartItem={cartItem} total={total} />}
+          element={
+            <CheckOut removeAll={removeAll} cartItem={cartItem} total={total} />
+          }
         />
       </Routes>
       <Footer />

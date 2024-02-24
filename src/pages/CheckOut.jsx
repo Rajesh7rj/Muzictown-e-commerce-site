@@ -3,7 +3,7 @@ import "../css/checkout.css";
 import FinalPayment from "../components/FinalPayment.jsx";
 // import { FcPrevious } from "react-icons/fc";
 
-export default function CheckOut({ cartItem, total }) {
+export default function CheckOut({ cartItem, total, removeAll }) {
   const [emoney, setEmoney] = useState(false);
   const [pay, setPay] = useState(false);
   let shipping = 50 * cartItem.length;
@@ -19,7 +19,13 @@ export default function CheckOut({ cartItem, total }) {
 
   return (
     <>
-      {pay && <FinalPayment grandTotal={grandTotal} cartItem={cartItem} />}
+      {pay && (
+        <FinalPayment
+          removeAll={removeAll}
+          grandTotal={grandTotal}
+          cartItem={cartItem}
+        />
+      )}
       <div id="checkout">
         <div className="checkout">
           <p className="title">CHECKOUT</p>

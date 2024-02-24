@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import "../css/navbar.css";
-import {HiOutlineMenu} from "react-icons/hi"
-
+import { HiOutlineMenu } from "react-icons/hi";
 
 export default function Navbar({
   cartItem,
@@ -16,14 +15,12 @@ export default function Navbar({
   const navigate = useNavigate();
   const [menu, setMenu] = useState(false);
 
-
   return (
     <div id="main">
       <nav>
-        
         <div className="nav">
-          <div className="mobileMenu" onClick={()=> setMenu(!menu)}>
-            <HiOutlineMenu size={30}/>
+          <div className="mobileMenu" onClick={() => setMenu(!menu)}>
+            <HiOutlineMenu size={30} />
           </div>
           <div className="logo" onClick={() => navigate("/")}>
             <h1 style={{ fontFamily: `'PT Serif','serif'` }}>MuzicTown</h1>
@@ -32,12 +29,12 @@ export default function Navbar({
           <div className="list">
             <ul className="nav-list">
               <li className="home">
-                <Link to="/" style={{ textDecoration: "none" }} >
+                <Link to="/" style={{ textDecoration: "none" }}>
                   <p>home</p>
                 </Link>
               </li>
               <li className="headphones">
-                <Link to="/headphones" style={{ textDecoration: "none" }} >
+                <Link to="/headphones" style={{ textDecoration: "none" }}>
                   <p>headphones</p>
                 </Link>
               </li>
@@ -55,7 +52,7 @@ export default function Navbar({
           </div>
 
           <div className="cart">
-            <span></span>
+            <span className="cart-item-count">{cartItem.length}</span>
             <AiOutlineShoppingCart size={30} onClick={() => setCart(!cart)} />
             {!cart ? (
               ""
@@ -64,8 +61,11 @@ export default function Navbar({
                 <div className="cartBox">
                   <div className="cardhead">
                     <p className="cT">CART ({cartItem.length})</p>
-                    <button onClick={() => removeAll()} className="removeAll">
-                      Remove all
+                    <button
+                      onClick={() => setCart(!cart)}
+                      className="removeAll"
+                    >
+                      Close
                     </button>
                   </div>
                   <div>
@@ -87,7 +87,7 @@ export default function Navbar({
                                 <button
                                   className="dec"
                                   onClick={() => {
-                                    quantity > 0 &&
+                                    quantity > 1 &&
                                       handleQuantity(false, cartItem[index]);
                                   }}
                                 >
@@ -96,9 +96,9 @@ export default function Navbar({
                                 {quantity}
                                 <button
                                   className="inc"
-                                  onClick={() =>
-                                    handleQuantity(true, cartItem[index])
-                                  }
+                                  onClick={() => {
+                                    handleQuantity(true, cartItem[index]);
+                                  }}
                                 >
                                   +
                                 </button>
@@ -110,6 +110,13 @@ export default function Navbar({
                           <p className="totalText">TOTAL</p>
                           <p className="totalPrice">$ {total}</p>
                         </div>
+                        <button
+                          onClick={() => removeAll()}
+                          className="removeAll"
+                          style={{ margin: "10px 0 18px 0" }}
+                        >
+                          Remove all
+                        </button>
                         <button
                           className="seeProd checkoutBtn"
                           onClick={() => {
@@ -132,37 +139,50 @@ export default function Navbar({
           </div>
         </div>
       </nav>
-        {
-          menu && (
-            <div className="mobileOptions">
-        
-            <div className="mobileList">
-                  <ul className="nav-list">
-                    <li className="home mOption">
-                      <Link to="/" style={{ textDecoration: "none" }} onClick={()=> setMenu()}>
-                        <p>home</p>
-                      </Link>
-                    </li>
-                    <li className="headphones mOption">
-                      <Link to="/headphones" style={{ textDecoration: "none" }} onClick={()=> setMenu()}>
-                        <p>headphones</p>
-                      </Link>
-                    </li>
-                    <li className="speakers mOption">
-                      <Link to={"/speakers"} style={{ textDecoration: "none" }} onClick={()=> setMenu()}>
-                        <p>speakers</p>
-                      </Link>
-                    </li>
-                    <li className="earphones mOption">
-                      <Link to={"/earphones"} style={{ textDecoration: "none" }} onClick={()=> setMenu("")}>
-                        <p>earphones</p>
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-            </div>
-          )
-        }
+      {menu && (
+        <div className="mobileOptions">
+          <div className="mobileList">
+            <ul className="nav-list">
+              <li className="home mOption">
+                <Link
+                  to="/"
+                  style={{ textDecoration: "none" }}
+                  onClick={() => setMenu()}
+                >
+                  <p>home</p>
+                </Link>
+              </li>
+              <li className="headphones mOption">
+                <Link
+                  to="/headphones"
+                  style={{ textDecoration: "none" }}
+                  onClick={() => setMenu()}
+                >
+                  <p>headphones</p>
+                </Link>
+              </li>
+              <li className="speakers mOption">
+                <Link
+                  to={"/speakers"}
+                  style={{ textDecoration: "none" }}
+                  onClick={() => setMenu()}
+                >
+                  <p>speakers</p>
+                </Link>
+              </li>
+              <li className="earphones mOption">
+                <Link
+                  to={"/earphones"}
+                  style={{ textDecoration: "none" }}
+                  onClick={() => setMenu("")}
+                >
+                  <p>earphones</p>
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
